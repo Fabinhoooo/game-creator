@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.4",
+	"EngineAssociation": "5.8",
 	"Category": "",
 	"Description": "Apex - simulation de course hyper-realiste (Chaos Vehicles)",
 	"Modules": [

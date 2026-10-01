@@ -4,8 +4,8 @@ Le C++ de ce dépôt couvre ce qui a une API stable (caméra, Enhanced Input, pa
 de rapports, HUD). La **config physique Chaos** et le **câblage mesh/roues** se font
 dans l'éditeur (plus fiable d'une version UE à l'autre). Étapes exactes ci-dessous.
 
-Prérequis : **UE 5.3+** (testé pour 5.4), **Visual Studio 2022** (Windows) ou Rider,
-avec la charge de travail "Game development with C++".
+Prérequis : **UE 5.3+** (projet aligné sur **5.8**), **Visual Studio 2022** (Windows)
+ou Rider, avec la charge de travail "Game development with C++".
 
 ---
 
