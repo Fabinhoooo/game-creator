@@ -1,24 +1,33 @@
-# game-creator
+# Apex — sim de course hyper-réaliste (Unreal Engine 5)
 
-Kit de dev de jeux **Unity 3D** piloté par **Claude Code** : dispatch automatique
-du modèle selon la tâche (Opus/Sonnet/Haiku), sources d'assets gratuites (CC0) via
-MCP, et un orchestrateur bout-en-bout (`/jeu`) qui enchaîne GDD → archi → proto →
-systèmes → assets → réseau → optim → build.
+Simulation de conduite **hardcore**, solo, photoréaliste, bâtie sur **Chaos Vehicles**
+(plugin natif Epic) + Lumen/Nanite. RWD, boîte manuelle séquentielle.
 
-## Démarrage
+## Démarrage rapide
+1. **UE 5.3+** + Visual Studio 2022 (workload C++) ou Rider.
+2. Clic droit `Apex.uproject` > **Generate Visual Studio project files**.
+3. Ouvre `Apex.sln`, build **Development Editor**, lance (F5).
+4. Suis **[SETUP-UNREAL.md](SETUP-UNREAL.md)** : Blueprint véhicule, roues, Enhanced
+   Input, valeurs physiques Chaos recommandées (sim hardcore).
 
-1. Copier ce dépôt à la racine d'un projet Unity (à côté de `Assets/`).
-2. Prérequis : **Node.js 18+** (pour les serveurs MCP `freeassets`/`sketchfab`).
-3. Lancer `claude` dans le projet, vérifier `/mcp` (→ `freeassets` connecté).
-4. Point d'entrée : `/jeu <idée du jeu en une phrase>`.
+## Docs
+- **[GDD.md](GDD.md)** — concept, core loop, scope MVP.
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** — découpage C++ + rôle de Chaos.
+- **[ROADMAP.md](ROADMAP.md)** — phases et état.
+- **[SETUP-UNREAL.md](SETUP-UNREAL.md)** — tout ce qui se fait dans l'éditeur.
 
-Détails complets : **[GUIDE-COMPLET.md](GUIDE-COMPLET.md)**.
-Pont éditeur Unity (agir dans l'éditeur) : **[INSTALL-UNITY-MCP.md](INSTALL-UNITY-MCP.md)**.
+## Code (`Source/Apex/`)
+`AApexVehiclePawn` (caméra + Enhanced Input + rapports), `UApexWheelFront`/`UApexWheelRear`,
+`AApexHUD` (télémétrie), `AApexGameMode`. Le C++ couvre les API stables ; la config
+physique Chaos se règle dans l'éditeur (voir ARCHITECTURE § "Pourquoi").
 
-## Contenu
+## Limite de pilotage par Claude Code
+Sur Unreal, l'assistance agentique est limitée : je peux écrire/modifier le C++, les
+specs et le tuning, mais **pas compiler ni agir dans l'éditeur depuis le cloud** (pas
+d'équivalent au MCP Unity). Le câblage éditeur et le test restent manuels.
 
-- `CLAUDE.md` — politique de dispatch modèle + règles d'assets/licences.
-- `.claude/agents/` — 3 subagents (`unity-netcode-perf`, `unity-gameplay`, `unity-boilerplate`).
-- `.claude/commands/` — `/jeu`, `/asset`, et les 10 `/tranche-*`.
-- `.mcp.json` — serveurs d'assets (`freeassets` CC0 sans clé, `sketchfab` optionnel).
-- `setup-unity-dispatch.sh` — script générateur (source de vérité de ce kit).
+## Legacy — kit Unity (non actif)
+Le projet a d'abord été initialisé avec un kit de dispatch Unity (uploadé). Conservé
+pour référence mais **non utilisé** : `setup-unity-dispatch.sh`, `GUIDE-COMPLET.md`,
+`INSTALL-UNITY-MCP.md`, `.claude/` (agents/commandes Unity), `.mcp.json` (les serveurs
+d'assets `freeassets`/`sketchfab` restent utiles, moteur indépendant).

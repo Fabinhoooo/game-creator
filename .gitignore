@@ -1,33 +1,27 @@
-# Unity
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
-[Mm]emoryCaptures/
-[Rr]ecordings/
-*.csproj
-*.unityproj
-*.sln
-*.user
-*.userprefs
-*.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
-*.apk
-*.aab
-*.unitypackage
-*.app
+# Unreal Engine — dossiers générés
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
 .vs/
-.vsconfig
-.gradle/
+.vscode/
+.idea/
+*.VC.db
+*.opensdf
+*.opendb
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
 
-# Assets importés (gros binaires) — garde les .meta, ignore le reste si besoin
-# Assets/Art/Imported/
+# Fichiers générés
+*.generated.h
+
+# Assets binaires très lourds (décommente si tu veux les exclure du dépôt)
+# Content/**/*.uasset
+# Content/**/*.umap
 
 # Clés / secrets — ne jamais committer
 .env
