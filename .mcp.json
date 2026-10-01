@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "freeassets": {
+      "command": "npx",
+      "args": ["-y", "threenative-asset-mcp"]
+    },
+    "sketchfab": {
+      "command": "npx",
+      "args": ["-y", "sketchfab-mcp-server"],
+      "env": {
+        "SKETCHFAB_API_KEY": "${SKETCHFAB_API_KEY}"
+      }
+    }
+  }
+}

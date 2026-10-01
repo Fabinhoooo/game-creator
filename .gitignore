@@ -1,0 +1,38 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.apk
+*.aab
+*.unitypackage
+*.app
+.vs/
+.vsconfig
+.gradle/
+
+# Assets importés (gros binaires) — garde les .meta, ignore le reste si besoin
+# Assets/Art/Imported/
+
+# Clés / secrets — ne jamais committer
+.env
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
